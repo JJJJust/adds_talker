@@ -1,0 +1,29 @@
+/.bundle/
+/.yardoc
+/_yardoc/
+/coverage/
+/doc/
+/pkg/
+/spec/reports/
+/tmp/
+
+# rspec failure tracking
+.rspec_status
+
+# IntelliJ IDEA / RubyMine
+/.idea/dictionaries
+/.idea/workspace.xml
+/.idea/tasks.xml
+/.idea/dataSources/
+/.idea/dataSources.ids
+/.idea/dataSources.xml
+/.idea/dataSources.local.xml
+/.idea/sqlDataSources.xml
+/.idea/dynamic.xml
+/.idea/uiDesigner.xml
+/.idea/.rakeTasks
+/.idea/.generators
+/.idea/shelf/
+
+# Gem devel specific
+Gemfile.lock
