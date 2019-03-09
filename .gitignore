@@ -10,6 +10,9 @@
 # rspec failure tracking
 .rspec_status
 
+# byebug
+*.byebug_history
+
 # IntelliJ IDEA / RubyMine
 /.idea/dictionaries
 /.idea/workspace.xml
