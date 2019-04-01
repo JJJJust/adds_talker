@@ -192,12 +192,8 @@ module ADDSTalker
                  .freeze
 
     def quality_control_flags=(value)
-      value = [value] if value.is_a?(Hash)
-
-      value.each do |hash|
-        hash.each_key do |k|
-          send("#{QCVALUES[k.to_sym]}=", true)
-        end
+      value.each_key do |k|
+        send("#{QCVALUES[k.to_sym]}=", true)
       end
     end
   end
