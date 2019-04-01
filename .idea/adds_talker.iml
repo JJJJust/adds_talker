@@ -13,6 +13,7 @@
     <orderEntry type="library" scope="PROVIDED" name="diff-lcs (v1.3, ruby-2.6.1-p33) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="faraday (v0.15.4, ruby-2.6.1-p33) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="faraday_middleware (v0.13.1, ruby-2.6.1-p33) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="multi_xml (v0.6.0, ruby-2.6.1-p33) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="multipart-post (v2.0.0, ruby-2.6.1-p33) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rake (v10.5.0, ruby-2.6.1-p33) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rspec (v3.8.0, ruby-2.6.1-p33) [gem]" level="application" />
