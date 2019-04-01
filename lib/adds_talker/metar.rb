@@ -28,7 +28,7 @@ module ADDSTalker
     attr_accessor :vertical_visibility
     attr_accessor :automated
     attr_accessor :auto_station
-    attr_accessor :maintenance_indicator
+    attr_accessor :maintenance_indicator_on
     attr_accessor :no_signal
     attr_accessor :lightning_sensor_off
     attr_accessor :freezing_rain_sensor_off
@@ -185,7 +185,7 @@ module ADDSTalker
 
     QCVALUES = { corrected: :corrected, auto: :automated,
                  auto_station: :auto_station,
-                 maintenance_indicator: :maintenance_indicator,
+                 maintenance_indicator_on: :maintenance_indicator_on,
                  lightning_sensor_off: :lightning_sensor_off,
                  freezing_rain_sensor_off: :freezing_rain_sensor_off,
                  present_weather_sensor_off: :present_weather_sensor_off }
