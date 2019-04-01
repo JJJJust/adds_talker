@@ -26,6 +26,7 @@ module ADDSTalker
     attr_accessor :precipitation
     attr_accessor :snow
     attr_accessor :vertical_visibility
+    attr_accessor :corrected
     attr_accessor :automated
     attr_accessor :auto_station
     attr_accessor :maintenance_indicator_on
