@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/nws-adds-talker.iml" filepath="$PROJECT_DIR$/.idea/nws-adds-talker.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/adds_talker.iml" filepath="$PROJECT_DIR$/.idea/adds_talker.iml" />
     </modules>
   </component>
 </project>

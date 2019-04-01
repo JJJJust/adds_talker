@@ -2,7 +2,7 @@
 
 require 'time'
 
-module ADDS
+module ADDSTalker
   module API
     module Helper
       # @param starting [#to_i]

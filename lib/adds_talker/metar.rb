@@ -2,7 +2,7 @@
 
 require_relative 'api/client'
 
-module ADDS
+module ADDSTalker
   class METAR
     APIMAP = { station_id: :station, metar_type: :type }.freeze
     attr_accessor :station
@@ -63,11 +63,11 @@ module ADDS
     # @param starting [#to_i]
     # @param ending [#to_i]
     # @param most_recent [True, False]
-    # @return [Array<ADDS::METAR>]
+    # @return [Array<ADDSTalker::METAR>]
     def self.get(station:, starting:, ending: nil, most_recent: true)
       raise StandardError unless station.is_a?(String) || station.is_a?(Array)
 
-      client = ADDS::API::Client.new
+      client = ADDSTalker::API::Client.new
       response = client.get_metar(station_id: station, starting: starting,
                                   ending: ending, most_recent: most_recent)
       raise StandardError if response['data']['num_results'].to_i <= 0

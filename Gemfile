@@ -1,4 +1,4 @@
 source "https://rubygems.org"
 
-# Specify your gem's dependencies in nws-adds-talker.gemspec
+# Specify your gem's dependencies in adds_talker.gemspec
 gemspec

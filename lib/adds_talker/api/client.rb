@@ -4,10 +4,10 @@ require 'faraday'
 require 'faraday_middleware'
 require_relative 'metar'
 
-module ADDS
+module ADDSTalker
   module API
     class Client
-      include ADDS::API::METAR
+      include ADDSTalker::API::METAR
       attr_accessor :url
       attr_accessor :persistent_parameters
       attr_accessor :connection

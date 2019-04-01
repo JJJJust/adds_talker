@@ -2,7 +2,7 @@
 
 require_relative 'api/client'
 
-module ADDS
+module ADDSTalker
   module API
   end
 end

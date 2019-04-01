@@ -1,10 +1,10 @@
 lib = File.expand_path("../lib", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require "adds/version"
+require "adds_talker/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "nws-adds-talker"
-  spec.version       = ADDS::VERSION
+  spec.name          = "adds_talker"
+  spec.version       = ADDSTalker::VERSION
   spec.authors       = ["Justin S. Johnson"]
   spec.summary       = ''
 

@@ -1,6 +1,6 @@
-RSpec.describe ADDS do
+RSpec.describe ADDSTalker do
   it "has a version number" do
-    expect(ADDS::VERSION).not_to be nil
+    expect(ADDSTalker::VERSION).not_to be nil
   end
 
   it "does something useful" do

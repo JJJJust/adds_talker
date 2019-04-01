@@ -2,7 +2,7 @@
 
 require_relative 'helper'
 
-module ADDS
+module ADDSTalker
   module API
     module METAR
       def get_metar(station_id:, starting:, ending: nil, most_recent: true)
@@ -13,9 +13,9 @@ module ADDS
                                    station_id
                                  end
         if starting || ending
-          params.merge!(ADDS::API::Helper.time_to_parameter(starting, ending))
+          params.merge!(ADDSTalker::API::Helper.time_to_parameter(starting, ending))
         end
-        params.merge!(ADDS::API::Helper
+        params.merge!(ADDSTalker::API::Helper
                         .most_recent_to_parameter(most_recent, ending))
         response = get(request_params: params)
         response.body['response']
