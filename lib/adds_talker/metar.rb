@@ -148,11 +148,11 @@ module ADDSTalker
 
     def precip_in=(value)
       hash = { since_last: { value: Float(value), units: :inch } }
-      @preciptation = if @preciptation
-                        @preciptation.merge(hash)
-                      else
-                        hash
-                      end
+      @precipitation = if @precipitation
+                         @precipitation.merge(hash)
+                       else
+                         hash
+                       end
     end
 
     # TODO: Lookup hash for sky condition
