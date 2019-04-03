@@ -175,6 +175,7 @@ module ADDSTalker
     def maxT_c=(value)
       @max_t = { value: Float(value), unit: :celsius }
     end
+
     # rubocop:enable Naming/MethodName
 
     # noinspection RubyInstanceMethodNamingConvention
@@ -182,10 +183,13 @@ module ADDSTalker
     def minT_c=(value)
       @min_t = { value: Float(value), unit: :celsius }
     end
+
     # rubocop:enable Naming/MethodName
 
-    QCVALUES = { corrected: :corrected, auto: :automated,
+    QCVALUES = { corrected: :corrected,
+                 auto: :automated,
                  auto_station: :auto_station,
+                 no_signal: :no_signal,
                  maintenance_indicator_on: :maintenance_indicator_on,
                  lightning_sensor_off: :lightning_sensor_off,
                  freezing_rain_sensor_off: :freezing_rain_sensor_off,
@@ -194,7 +198,11 @@ module ADDSTalker
 
     def quality_control_flags=(value)
       value.each_key do |k|
-        send("#{QCVALUES[k.to_sym]}=", true)
+        begin
+          send("#{QCVALUES[k.to_sym]}=", true)
+        rescue NoMethodError
+          nil
+        end
       end
     end
   end
