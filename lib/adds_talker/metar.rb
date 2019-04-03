@@ -1,9 +1,12 @@
 # frozen_string_literal: true
 
 require_relative 'api/client'
+require_relative 'metar/wind'
 
 module ADDSTalker
   class METAR
+    include ADDSTalker::METAR::Wind
+
     APIMAP = { station_id: :station, metar_type: :type }.freeze
     attr_accessor :station
     attr_accessor :latitude
@@ -13,7 +16,6 @@ module ADDSTalker
     attr_accessor :observation_time
     attr_accessor :temperature
     attr_accessor :dewpoint
-    attr_accessor :wind
     attr_accessor :visibility
     attr_accessor :altimeter
     attr_accessor :sea_level_pressure
@@ -55,6 +57,7 @@ module ADDSTalker
       input.each_key do |k|
         object.send("#{k}=", input.delete(k))
       end
+      object.check_wind_variable
       object
     end
 
@@ -92,46 +95,6 @@ module ADDSTalker
 
     def dewpoint_c=(value)
       @dewpoint = { value: Float(value), unit: :celsius }
-    end
-
-    def wind_dir_degrees=(value)
-      hash = { direction: value.to_i }
-      @wind = if @wind
-                if @wind[:wind]
-                  @wind.merge(wind: @wind[:wind].merge(hash))
-                else
-                  @wind.merge(wind: hash)
-                end
-              else
-                { wind: hash }
-              end
-    end
-
-    def wind_speed_kt=(value)
-      hash = { speed: value.to_i, unit: :knot }
-      @wind = if @wind
-                if @wind[:wind]
-                  @wind.merge(wind: @wind[:wind].merge(hash))
-                else
-                  @wind.merge(wind: hash)
-                end
-              else
-                { wind: hash }
-              end
-    end
-
-    def wind_gust_kt=(value)
-      hash = { value: value.to_i, unit: :knot }
-
-      @wind = if @wind
-                if @wind[:gusting]
-                  @wind.merge(gusting: @wind[:gusting].merge(hash))
-                else
-                  @wind.merge(gusting: hash)
-                end
-              else
-                { gusting: hash }
-              end
     end
 
     def visibility_statute_mi=(value)
