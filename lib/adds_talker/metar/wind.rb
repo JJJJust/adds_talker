@@ -4,15 +4,15 @@ module ADDSTalker
       attr_accessor :wind
 
       def wind_variable?
-        @wind&.dig(:wind, :variable) ? true : false
+        wind&.dig(:wind, :variable) ? true : false
       end
 
       def wind_variable_first
-        @wind&.dig(:wind, :wind_variable_first)
+        wind&.dig(:wind, :wind_variable_first)
       end
 
       def wind_variable_second
-        @wind&.dig(:wind, :wind_variable_seconds)
+        wind&.dig(:wind, :wind_variable_seconds)
       end
 
       def wind_dir_degrees=(value)
