@@ -15,6 +15,14 @@ module ADDSTalker
         wind&.dig(:wind, :wind_variable_seconds)
       end
 
+      def wind_gusting?
+        wind&.dig(:gusting) ? true : false
+      end
+
+      def wind_gust_speed
+        wind&.dig(:gusting, :value)
+      end
+
       def wind_dir_degrees=(value)
         hash = { direction: value.to_i }
         @wind = if @wind
