@@ -74,7 +74,7 @@ module ADDSTalker
       client = ADDSTalker::API::Client.new
       response = client.get_metar(station_id: station, starting: starting,
                                   ending: ending, most_recent: most_recent)
-      raise StandardError if response['data']['num_results'].to_i <= 0
+      return nil if response['data']['num_results'].to_i <= 0
 
       data = response['data']['METAR']
       data = [data] if data.is_a?(Hash)
