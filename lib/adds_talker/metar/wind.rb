@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module ADDSTalker
   class METAR
     module Wind
