@@ -87,6 +87,7 @@ module ADDSTalker
           hash[:variable_second] = variable_bound_array[1].max
         end
         return nil if hash.empty?
+
         @wind = if @wind
                   if @wind[:wind]
                     @wind.merge(wind: @wind[:wind].merge(hash))
